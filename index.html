@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Laravel Project Cafe | Laravel Projects Ideas for Building Backend Development Skills</title>
+<meta name="description" content="A playful project menu of Laravel ideas for building backend skills. Pick your order, build your plan, and explore guided learning links.">
+<style>
+:root{--ink:#0a0c10;--ink2:#12161d;--blue:#2f6bff;--teal:#16c0b0;--brown:#8a5a3b;--kraft:#c9a27c;--white:#fff;--paper:#f7f2ea;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--ink);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+.mono{font-family:"Courier New",monospace}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--teal),var(--blue));z-index:99}
+header{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.88);backdrop-filter:blur(10px);border-bottom:1px solid #1f2733}
+.nav{max-width:1150px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:bold;font-size:1.1rem}
+.cup{width:34px;height:30px;position:relative;background:var(--brown);border-radius:4px 4px 14px 14px;border:2px solid var(--kraft)}
+.cup:after{content:"";position:absolute;right:-12px;top:5px;width:12px;height:12px;border:3px solid var(--kraft);border-radius:0 10px 10px 0}
+.cup i{position:absolute;top:-14px;width:5px;height:12px;border-radius:5px;background:var(--teal);opacity:.7;animation:steam 2.2s infinite}
+.cup i:nth-child(1){left:7px}.cup i:nth-child(2){left:18px;animation-delay:.7s}
+@keyframes steam{0%{transform:translateY(6px);opacity:0}50%{opacity:.8}100%{transform:translateY(-8px);opacity:0}}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.9rem;padding:7px 12px;border-radius:99px;color:#cdd6e3}
+nav a:hover{background:var(--blue);color:#fff}
+.wrap{max-width:1150px;margin:auto;padding:0 20px}
+.hero{padding:70px 0 50px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.tag{display:inline-block;background:var(--teal);color:var(--ink);padding:4px 12px;border-radius:99px;font-size:.8rem;font-weight:bold;letter-spacing:.06em}
+h1{font-size:clamp(2.2rem,5.2vw,4rem);line-height:1.08;margin:16px 0}
+h1 em{font-style:normal;color:var(--teal);border-bottom:4px dashed var(--brown)}
+.lead{color:#b9c4d6;font-size:1.1rem;max-width:560px}
+.btn{display:inline-block;margin:22px 12px 0 0;padding:13px 24px;border-radius:99px;text-decoration:none;font-weight:bold;border:2px solid var(--blue);background:var(--blue);color:#fff;transition:.25s;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,107,255,.4)}
+.btn.alt{background:transparent;border-color:var(--teal);color:var(--teal)}
+.receipt{background:var(--paper);color:var(--ink);border-radius:6px;padding:26px 24px 34px;position:relative;transform:rotate(2deg);box-shadow:0 24px 50px rgba(0,0,0,.6);-webkit-mask:radial-gradient(circle 9px at 9px 100%,#0000 98%,#000) 0 0/18px 100% repeat-x;mask:radial-gradient(circle 9px at 9px 100%,#0000 98%,#000) 0 0/18px 100% repeat-x}
+.receipt h3{text-align:center;border-bottom:2px dashed var(--brown);padding-bottom:10px;margin-bottom:12px}
+.receipt p{display:flex;justify-content:space-between;font-family:"Courier New",monospace;font-size:.92rem;padding:3px 0}
+.receipt .tot{border-top:2px dashed var(--brown);margin-top:10px;padding-top:10px;font-weight:bold;color:var(--blue)}
+section{padding:60px 0}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:8px}
+.sub{color:#a9b5c8;margin-bottom:28px;max-width:640px}
+.blend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.chip{padding:10px 20px;border-radius:99px;border:2px solid #2a3547;background:var(--ink2);color:#fff;cursor:pointer;font-family:inherit;font-size:.95rem;transition:.2s}
+.chip:hover{border-color:var(--teal)}
+.chip.on{background:var(--teal);color:var(--ink);border-color:var(--teal);font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.menu{display:grid;grid-template-columns:1fr 320px;gap:26px;align-items:start}
+.card{background:linear-gradient(160deg,#1a1410,#241a13);border:2px dashed var(--brown);border-radius:var(--r);padding:20px;transition:.3s;position:relative;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px) rotate(-.6deg);border-color:var(--teal)}
+.card.picked{border:2px solid var(--teal);box-shadow:0 0 0 4px rgba(22,192,176,.18)}
+.price{position:absolute;top:-12px;right:14px;background:var(--blue);padding:3px 12px;border-radius:99px;font-size:.8rem;font-weight:bold}
+.lv{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--kraft)}
+.card h3{margin:6px 0;font-size:1.2rem}
+.card p{color:#c5b8aa;font-size:.92rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.tags span{font-size:.72rem;background:#0f1a2e;border:1px solid #22407a;color:#9bbcff;padding:2px 9px;border-radius:99px}
+.add{background:transparent;color:var(--teal);border:2px solid var(--teal);border-radius:99px;padding:8px;cursor:pointer;font-family:inherit;font-weight:bold;transition:.2s}
+.add:hover,.picked .add{background:var(--teal);color:var(--ink)}
+aside.tray{position:sticky;top:90px;background:var(--paper);color:var(--ink);border-radius:var(--r);padding:22px;border-top:10px solid var(--brown)}
+aside h3{margin-bottom:10px}
+#trayList{list-style:none;min-height:60px;font-size:.92rem}
+#trayList li{padding:6px 0;border-bottom:1px dashed #b8a58f;display:flex;justify-content:space-between;gap:8px}
+.empty{color:#7a6b5a;font-style:italic}
+.meter{height:12px;background:#d9cfc1;border-radius:99px;overflow:hidden;margin:14px 0 6px}
+.meter b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--blue));transition:width .5s}
+.mini{font-size:.8rem;color:#5b4d3e}
+.say{margin-top:12px;font-size:.88rem;color:var(--brown);font-style:italic}
+.pair{background:var(--ink2);border:1px solid #232d3d;border-radius:var(--r);padding:24px;text-decoration:none;transition:.3s;display:block}
+.pair:hover{background:var(--blue);transform:translateY(-5px)}
+.pair small{color:var(--teal);font-weight:bold;letter-spacing:.1em}
+.pair:hover small{color:#fff}
+.pair h3{margin:8px 0}
+.pair p{color:#b4bfd0;font-size:.92rem}
+.pair:hover p{color:#e6eeff}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.book{background:var(--paper);color:var(--ink);border-radius:8px 8px 8px 8px;border-left:14px solid var(--brown);padding:22px 20px;text-decoration:none;transition:.3s}
+.book:nth-child(2n){border-left-color:var(--teal)}.book:nth-child(3n){border-left-color:var(--blue)}
+.book:hover{transform:translateY(-6px) rotate(1deg);box-shadow:0 16px 30px rgba(0,0,0,.5)}
+.book small{color:var(--brown)}
+.book h3{font-size:1.02rem;margin-top:6px}
+.cta{background:linear-gradient(120deg,var(--blue),var(--teal));border-radius:26px;padding:44px 28px;text-align:center;color:var(--ink)}
+.cta .btn{background:var(--ink);border-color:var(--ink);color:#fff}
+footer{background:#06080b;border-top:3px solid var(--brown);margin-top:50px;padding:40px 20px;text-align:center;color:#8e9bb0}
+footer ul{list-style:none;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:16px 0}
+footer a{color:var(--teal)}
+.rv{opacity:0;transform:translateY(30px);transition:.7s}
+.rv.in{opacity:1;transform:none}
+#top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;background:var(--teal);color:var(--ink);font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:60}
+#top.show{opacity:1;pointer-events:auto}
+@media(max-width:860px){.hero,.menu{grid-template-columns:1fr}.receipt{transform:none}aside.tray{position:static}nav ul{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header>
+<div class="nav">
+<a class="logo" href="#top0"><span class="cup"><i></i><i></i></span>The Laravel Project Cafe</a>
+<nav><ul><li><a href="#menu">Menu</a></li><li><a href="#pairs">Pairings</a></li><li><a href="#shelf">Reading</a></li><li><a href="https://www.justacademy.co/course-detail/delhi/laravel-training-in-delhi" target="_blank" rel="noopener">Laravel Course</a></li></ul></nav>
+</div>
+</header>
+
+<main id="top0">
+<div class="wrap hero">
+<div>
+<span class="tag">NOW SERVING: BACKEND SKILLS</span>
+<h1>Order a project. <em>Serve a skill.</em></h1>
+<p class="lead">Laravel projects ideas for building backend development skills, laid out like a cafe menu. Pick a blend that matches your level, add dishes to your tray and watch a real learning plan appear.</p>
+<a class="btn" href="#menu">Open the menu</a>
+<a class="btn alt" href="https://www.justacademy.co/blog-detail/laravel-projects-ideas-for-building-backend-development-skills" target="_blank" rel="noopener">Read the full guide</a>
+</div>
+<div class="receipt rv" aria-live="polite">
+<h3>YOUR ORDER</h3>
+<p><span>Dishes</span><span id="rc1">0</span></p>
+<p><span>Build weeks</span><span id="rc2">0</span></p>
+<p><span>Skills tasted</span><span id="rc3">0</span></p>
+<p class="tot"><span>Readiness</span><span id="rc4">0%</span></p>
+</div>
+</div>
+
+<div class="wrap" id="menu">
+<section>
+<h2 class="rv">Today&rsquo;s Project Menu</h2>
+<p class="sub rv">Choose your blend, then tap Add to tray. Every dish teaches something different about laravel coding, data and real application design.</p>
+<div class="blend rv" id="blend">
+<button class="chip on" data-f="all">All dishes</button>
+<button class="chip" data-f="Starter">Light roast (Starter)</button>
+<button class="chip" data-f="Intermediate">Medium roast (Intermediate)</button>
+<button class="chip" data-f="Advanced">Dark roast (Advanced)</button>
+</div>
+<div class="menu">
+<div class="grid" id="grid"></div>
+<aside class="tray rv">
+<h3>Your tray</h3>
+<ul id="trayList"><li class="empty">Nothing yet. Add a dish to begin.</li></ul>
+<div class="meter"><b id="meter"></b></div>
+<p class="mini" id="meterTxt">Plan strength: 0 of 10 dishes</p>
+<p class="say" id="say">Tip: start with one light roast to warm up.</p>
+<button class="btn" id="copy" style="margin-top:14px;font-size:.9rem;padding:10px 18px">Copy my plan</button>
+<button class="btn alt" id="clear" style="margin-top:14px;font-size:.9rem;padding:10px 18px">Clear</button>
+</aside>
+</div>
+</section>
+
+<section id="pairs">
+<h2 class="rv">Perfect Pairings</h2>
+<p class="sub rv">Backend skills taste better with company. These guided course pages sit nicely beside your practice.</p>
+<div class="grid">
+<a class="pair rv" href="https://www.justacademy.co/course-detail/delhi/laravel-training-in-delhi" target="_blank" rel="noopener"><small>THE MAIN BREW</small><h3>Laravel Training in Delhi</h3><p>Structured laravel and php practice with live interactive, instructor led and mentor led sessions.</p></a>
+<a class="pair rv" href="https://www.justacademy.co/course-detail/delhi/javascript-training-in-delhi" target="_blank" rel="noopener"><small>FOR THE REACT SIDE</small><h3>JavaScript Training in Delhi</h3><p>Firm JavaScript basics make every laravel and react project smoother.</p></a>
+<a class="pair rv" href="https://www.justacademy.co/course-detail/delhi/python-training-in-delhi" target="_blank" rel="noopener"><small>FOR REPORTS AND DATA</small><h3>Python Training in Delhi</h3><p>Explore the data your inventory or billing app collects.</p></a>
+<a class="pair rv" href="https://www.justacademy.co/course-detail/pune/selenium-training-in-pune" target="_blank" rel="noopener"><small>FOR TASTE TESTING</small><h3>Selenium Training in Pune</h3><p>A live online course for testing your whole user journey, open to learners across India.</p></a>
+</div>
+</section>
+
+<section id="shelf">
+<h2 class="rv">The Reading Shelf</h2>
+<p class="sub rv">Pull a book down while your coffee cools.</p>
+<div class="shelf">
+<a class="book rv" href="https://www.justacademy.co/blog-detail/laravel-projects-ideas-for-building-backend-development-skills" target="_blank" rel="noopener"><small>THE MAIN GUIDE</small><h3>Laravel Projects Ideas for Building Backend Development Skills</h3></a>
+<a class="book rv" href="https://www.justacademy.co/blog-detail/laravel-developer-roadmap-2026-skills-projects-and-career-opportunities" target="_blank" rel="noopener"><small>CAREER MAP</small><h3>Laravel Developer Roadmap 2026: Skills, Projects and Career Opportunities</h3></a>
+<a class="book rv" href="https://www.justacademy.co/blog-detail/laravel-online-course-vs-offline-course-which-is-better-in-mumbai" target="_blank" rel="noopener"><small>LEARNING STYLE</small><h3>Laravel Online Course vs Offline Course: Which Is Better?</h3></a>
+<a class="book rv" href="https://www.justacademy.co/blog-detail/top-10-laravel-training-institutes-in-mumbai-which-one-should-you-choose" target="_blank" rel="noopener"><small>CHOOSING WELL</small><h3>Top 10 Laravel Training Institutes in Mumbai: Which One Should You Choose?</h3></a>
+</div>
+</section>
+
+<section>
+<div class="cta rv">
+<h2>Ready to place your first order?</h2>
+<p>Pick one dish, write what done means, and start this week.</p>
+<a class="btn" href="https://www.justacademy.co/course-detail/delhi/laravel-training-in-delhi" target="_blank" rel="noopener">Explore Laravel training</a>
+<a class="btn" href="#menu">Back to the menu</a>
+</div>
+</section>
+</div>
+</main>
+
+<footer>
+<strong>The Laravel Project Cafe</strong>
+<p>Laravel projects ideas for building backend development skills.</p>
+<ul>
+<li><a href="https://www.justacademy.co/course-detail/delhi/laravel-training-in-delhi" target="_blank" rel="noopener">Laravel Delhi</a></li>
+<li><a href="https://www.justacademy.co/course-detail/delhi/javascript-training-in-delhi" target="_blank" rel="noopener">JavaScript Delhi</a></li>
+<li><a href="https://www.justacademy.co/course-detail/delhi/python-training-in-delhi" target="_blank" rel="noopener">Python Delhi</a></li>
+<li><a href="https://www.justacademy.co/course-detail/pune/selenium-training-in-pune" target="_blank" rel="noopener">Selenium Pune</a></li>
+<li><a href="https://www.justacademy.co/blog-detail/laravel-developer-roadmap-2026-skills-projects-and-career-opportunities" target="_blank" rel="noopener">Roadmap</a></li>
+<li><a href="https://www.justacademy.co/blog-detail/laravel-online-course-vs-offline-course-which-is-better-in-mumbai" target="_blank" rel="noopener">Online vs Offline</a></li>
+<li><a href="https://www.justacademy.co/blog-detail/top-10-laravel-training-institutes-in-mumbai-which-one-should-you-choose" target="_blank" rel="noopener">Top Institutes</a></li>
+<li><a href="https://www.justacademy.co/blog-detail/laravel-projects-ideas-for-building-backend-development-skills" target="_blank" rel="noopener">Project Ideas Guide</a></li>
+</ul>
+<p>Built with care for learners. Classroom training in Mumbai, live online for everyone else.</p>
+</footer>
+<button id="top" aria-label="Back to top">&uarr;</button>
+
+<script>
+var P=[
+{n:"Personal Blog",l:"Starter",w:2,d:"Posts, Blade layouts and an admin login. Where html and css finally meet the backend.",t:["Routing","Blade","Auth"]},
+{n:"Task Tracker",l:"Starter",w:2,d:"Every user sees only their own tasks. Relationships and validation made real.",t:["Eloquent","Policies","Validation"]},
+{n:"URL Shortener",l:"Starter",w:1,d:"Dynamic routes, unique codes, redirects and a click counter.",t:["Routes","Indexes","Analytics"]},
+{n:"Library System",l:"Intermediate",w:4,d:"Books, authors, members and loans. Many to many data and overdue reports.",t:["Relations","Search","Pagination"]},
+{n:"Clinic Booking",l:"Intermediate",w:4,d:"Slots, cancellations and zero double bookings, with email through queues.",t:["Transactions","Queues","Roles"]},
+{n:"Shop Inventory and Billing",l:"Intermediate",w:4,d:"Stock, suppliers, invoices and a low stock alert for a neighbourhood store.",t:["Schema","Invoices","Exports"]},
+{n:"Job Portal",l:"Intermediate",w:4,d:"Employers post, candidates apply. Two roles, uploads and filters.",t:["Uploads","Filters","Mail"]},
+{n:"Project Management System",l:"Advanced",w:8,d:"Teams, tasks, comments and notifications. The portfolio piece interviewers love.",t:["Permissions","Packages","Notifications"]},
+{n:"Laravel and React Dashboard",l:"Advanced",w:6,d:"Build the API first, then pair it with a React frontend or Inertia.",t:["API","Sanctum","React"]},
+{n:"Store with PayPal and WhatsApp",l:"Advanced",w:6,d:"Sandbox payments, server side verification and order alerts on WhatsApp.",t:["Payments","Webhooks","Jobs"]}
+];
+var sel={},f="all",$=function(i){return document.getElementById(i)};
+function draw(){
+var g=$("grid");g.innerHTML="";
+P.forEach(function(p,i){
+if(f!=="all"&&p.l!==f)return;
+var c=document.createElement("div");c.className="card rv in"+(sel[i]?" picked":"");
+c.innerHTML='<span class="price">'+p.w+(p.w>1?' weeks':' week')+'</span><span class="lv">'+p.l+'</span><h3>'+p.n+'</h3><p>'+p.d+'</p><div class="tags">'+p.t.map(function(x){return"<span>"+x+"</span>"}).join("")+'</div><button class="add">'+(sel[i]?"Remove from tray":"Add to tray")+'</button>';
+c.querySelector(".add").onclick=function(){if(sel[i])delete sel[i];else sel[i]=1;draw();upd()};
+g.appendChild(c)})}
+function upd(){
+var ks=Object.keys(sel),wk=0,sk={};
+ks.forEach(function(k){wk+=P[k].w;P[k].t.forEach(function(x){sk[x]=1})});
+var sc=Object.keys(sk).length,pct=Math.min(100,Math.round(ks.length/P.length*100));
+$("rc1").textContent=ks.length;$("rc2").textContent=wk;$("rc3").textContent=sc;$("rc4").textContent=pct+"%";
+$("meter").style.width=pct+"%";$("meterTxt").textContent="Plan strength: "+ks.length+" of "+P.length+" dishes";
+$("trayList").innerHTML=ks.length?ks.map(function(k){return"<li><span>"+P[k].n+"</span><span>"+P[k].w+"w</span></li>"}).join(""):'<li class="empty">Nothing yet. Add a dish to begin.</li>';
+var m=ks.length?(ks.some(function(k){return P[k].l==="Advanced"})?"Bold order. Remember to host it and write its story.":ks.some(function(k){return P[k].l==="Intermediate"})?"Nice balance. Try adding one advanced dish later.":"Great warm up. Finish these before ordering more."):"Tip: start with one light roast to warm up.";
+$("say").textContent=m}
+$("blend").onclick=function(e){var b=e.target.closest(".chip");if(!b)return;f=b.dataset.f;[].forEach.call(document.querySelectorAll(".chip"),function(c){c.classList.remove("on")});b.classList.add("on");draw()};
+$("clear").onclick=function(){sel={};draw();upd()};
+$("copy").onclick=function(){var ks=Object.keys(sel);var txt=ks.length?"My Laravel plan: "+ks.map(function(k){return P[k].n+" ("+P[k].w+"w)"}).join(", "):"My tray is empty.";
+if(navigator.clipboard){navigator.clipboard.writeText(txt)}$("copy").textContent="Copied!";setTimeout(function(){$("copy").textContent="Copy my plan"},1500)};
+window.addEventListener("scroll",function(){var h=document.documentElement;$("bar").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";$("top").classList.toggle("show",h.scrollTop>500)});
+$("top").onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.12});
+[].forEach.call(document.querySelectorAll(".rv"),function(el){io.observe(el)});
+draw();upd();
+</script>
+</body>
+</html>
